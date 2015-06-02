@@ -1,7 +1,7 @@
 {
     "name":"clearshot",
     "description":" Screenshots as a service",
-    "main":"app.js",
+    "main":"server.js",
     "version":"0.0.1",
     "repository":{
         "type":"git",
@@ -14,6 +14,6 @@
         "body-parser":"*"
     },
     "scripts":{
-        "start":"node app.js"
+        "start":"node server.js"
     }
 }

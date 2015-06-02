@@ -1,7 +1,6 @@
 $(document).ready(function(){
   var url;
   var submit = function() {
-    console.log("ASD");
     url=$("#url").val();
     $.post("/api",{url: url}, function(data){
       $('#result').text(data.result);

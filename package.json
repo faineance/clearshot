@@ -1,11 +1,19 @@
 {
-  "name": "clearshot",
-  "description": " Screenshots as a service",
-  "version": "0.0.1",
-  "dependencies": {
-    "express": "*",
-    "phantom": "*",
-    "jade": "*",
-    "body-parser": "*"
-  }
+    "name":"clearshot",
+    "description":" Screenshots as a service",
+    "main":"app.js",
+    "version":"0.0.1",
+    "repository":{
+        "type":"git",
+        "url":"git://github.com/faineance/clearshot.git"
+    },
+    "dependencies":{
+        "express":"*",
+        "phantom":"*",
+        "jade":"*",
+        "body-parser":"*"
+    },
+    "scripts":{
+        "start":"node app.js"
+    }
 }

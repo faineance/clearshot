@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('_clearshot:server');
+var debug = require('debug')('clearshot:server');
 var http = require('http');
 
 /**
@@ -29,9 +29,6 @@ var server = http.createServer(app);
 server.listen(port,server_ip);
 server.on('error', onError);
 server.on('listening', onListening);
-
-
-
 
 /**
  * Event listener for HTTP server "error" event.

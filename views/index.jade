@@ -1,6 +1,11 @@
 extends layout
 
 block content
-	input(type="text", id = "url" name="url")
-	input(type="submit" id="submit" , value="submit")
-	span(id="result")
+	div
+		h1 Clearshot
+
+		input(type="url" id = "url" name="url" autocomplete="off")
+
+		input(type="submit" id="submit" value="submit")
+
+		span(id="result")

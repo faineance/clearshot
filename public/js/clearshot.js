@@ -1,19 +1,34 @@
 $(document).ready(function(){
-  var url;
+  $('input[name=url]').focus().select();
+  
   var submit = function() {
     url=$("#url").val();
+    if (!/^https?:\/\//i.test(url)) {
+      url = 'http://' + url;
+    }
     $.post("/api",{url: url}, function(data){
       $('#result').text(data.result);
       $('input[name=url]').focus().select();
     });
   };
 
-  $("#submit").click(submit);
 
-  $('input[type=text]').bind('keydown', function(e) {
-    if (e.keyCode == 13) {
-      submit();
+  $('input[type=url]').on('keydown', function(e) {
+
+    url=$("#url").val();
+
+    if(/(^|\s)((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/gi.test(url)) {
+      $("#submit").css("background-color", "blue");
+      $("#submit").on("click", submit);
+      if (e.keyCode == 13) {
+        submit();
+      }
+    } else {
+      $("#submit").css("background-color", "yellow");
+      $("#submit").off("click");
     }
   });
+
+
 
 });

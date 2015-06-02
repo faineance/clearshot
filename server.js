@@ -9,7 +9,8 @@ app.use(express.static(public_dir));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080; 
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 var router = express.Router();  
 
@@ -52,9 +53,8 @@ router.route('/')
 
 app.use('/api', router);
 
-
-app.listen(port);
-console.log('Listening on port ' + port);
-
+app.listen(server_port, server_ip, function(){
+  console.log("Listening on " + server_ip + ", server_port " + server_port)
+});
 
 

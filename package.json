@@ -1,5 +1,5 @@
 {
-    "name":"_clearshot",
+    "name":"clearshot",
     "description":" Screenshots as a service",
     "version":"0.0.1",
     "scripts":{
@@ -19,5 +19,9 @@
         "less-middleware":"1.0.x",
         "morgan":"~1.5.3",
         "serve-favicon":"~2.2.1"
+    },
+    "licenses":{
+        "type": "MIT",
+        "url": "https://github.com/faineance/clearshot/raw/master/LICENSE"
     }
 }

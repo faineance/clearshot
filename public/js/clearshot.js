@@ -18,13 +18,11 @@ $(document).ready(function(){
     url=$("#url").val();
 
     if(/(^|\s)((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/gi.test(url)) {
-      $("#submit").css("background-color", "blue");
       $("#submit").on("click", submit);
       if (e.keyCode == 13) {
         submit();
       }
     } else {
-      $("#submit").css("background-color", "yellow");
       $("#submit").off("click");
     }
   });
